@@ -1,0 +1,47 @@
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: hsl(185, 53%, 34%);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.category-buttons button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.category-buttons button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.gallery .col {
+    flex: 0 1 calc(20% - 10px); /* Adjust this value to change the number of columns */
+    box-sizing: border-box;
+}
+.gallery .card {
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.show-more-container {
+    text-align: center;
+    margin-top: 20px;
+}
