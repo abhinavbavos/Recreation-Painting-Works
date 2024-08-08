@@ -330,23 +330,23 @@
 
          <!-- portfolio area start -->
           <br> <br>
-         <div class="category-buttons">
-            <button onclick="filterImages('all')"><strong>All</strong></button>
-            <button onclick="filterImages('interior')">Interior</button>
-            <button onclick="filterImages('exterior')">Exterior</button>
-            <button onclick="filterImages('texture')">Texture</button>
-            <button onclick="filterImages('polish')">Polish</button>
-            <button onclick="filterImages('spray')">Spray Painting</button>
-            <button onclick="filterImages('interlock')">Interlock Painting</button>
-            <button onclick="filterImages('putty')">Putty Works</button>
+          <div class="category-buttons">
+            <button onclick="filterItems('all')"><strong>All</strong></button>
+            <button onclick="filterItems('interior')">Interior</button>
+            <button onclick="filterItems('exterior')">Exterior</button>
+            <button onclick="filterItems('texture')">Texture</button>
+            <button onclick="filterItems('polish')">Polish</button>
+            <button onclick="filterItems('spray')">Spray Painting</button>
+            <button onclick="filterItems('interlock')">Interlock Painting</button>
+            <button onclick="filterItems('putty')">Putty Works</button>
         </div>
-    <br>
+        <br>
         <div class="gallery" id="gallery">
-            <!-- Images will be inserted here dynamically by JavaScript -->
+            <!-- Images and videos will be inserted here dynamically by JavaScript -->
         </div>
-    <br>
+        <br>
         <div class="show-more-container">
-            <button onclick="showMoreImages()">Show More</button>
+            <button onclick="showMoreItems()">Show More</button>
         </div>
         <br> <br>
          <!-- portfolio area end -->
@@ -617,36 +617,29 @@
        <!-- ========================================================================================================================= -->
       
       <script>
-         const images = [
+         const items = [
              { src: 'assets/img/gallery/int 1.jpg', category: 'interior' },
              { src: 'assets/img/gallery/int 2.jpg', category: 'interior' },
              { src: 'assets/img/gallery/int 3.jpg', category: 'interior' },
              { src: 'assets/img/gallery/int 4.jpg', category: 'interior' },
              { src: 'assets/img/gallery/int 5.jpg', category: 'interior' },
              { src: 'assets/img/gallery/int 6.jpg', category: 'interior' },
-             { src: 'assets/img/gallery/int 1.jpg', category: 'interior' },
-             { src: 'assets/img/gallery/int 1.jpg', category: 'interior' },
-             { src: 'assets/img/gallery/int 1.jpg', category: 'interior' },
-             { src: 'assets/img/gallery/int 1.jpg', category: 'interior' },
+             { src: 'assets/img/gallery/int 7.jpg', category: 'interior' },
+             { src: 'assets/img/gallery/int 8.jpg', category: 'interior' },
+             { src: 'assets/img/gallery/int 9.jpg', category: 'interior' },
+             { src: 'assets/img/gallery/int 10.jpg', category: 'interior' },
              { src: 'assets/img/gallery/ext 2.jpg', category: 'exterior' },
-             { src: 'assets/img/gallery/ext 3.jpg', category: 'exterior' },
              { src: 'assets/img/gallery/ext 4.jpg', category: 'exterior' },
              { src: 'assets/img/gallery/ext 5.jpg', category: 'exterior' },
              { src: 'assets/img/gallery/ext 6.jpg', category: 'exterior' },
-             { src: 'assets/img/gallery/ext 7.jpg', category: 'exterior' },
              { src: 'assets/img/gallery/ext 8.jpg', category: 'exterior' },
              { src: 'assets/img/gallery/ext 9.jpg', category: 'exterior' },
              { src: 'assets/img/gallery/ext 10.jpg', category: 'exterior' },
              { src: 'assets/img/gallery/ext 11.jpg', category: 'exterior' },
              { src: 'assets/img/gallery/text 1.jpg', category: 'texture' },
              { src: 'assets/img/gallery/text 2.jpg', category: 'texture' },
-             { src: 'assets/img/gallery/text 3.jpg', category: 'texture' },
-             { src: 'assets/img/gallery/text 4.jpg', category: 'texture' },
-             { src: 'assets/img/gallery/text 5.jpg', category: 'texture' },
-             { src: 'assets/img/gallery/text 6.jpg', category: 'texture' },
-             { src: 'assets/img/gallery/text 7.jpg', category: 'texture' },
              { src: 'assets/img/gallery/text 8.jpg', category: 'texture' },
-             { src: 'assets/img/gallery/text 9.jpg', category: 'texture' },
+             { src: 'assets/img/gallery/text 4.jpg', category: 'texture' },
              { src: 'assets/img/gallery/text 10.jpg', category: 'texture' },
              { src: 'assets/img/gallery/polish 1.jpg', category: 'polish' },
              { src: 'assets/img/gallery/polish 2.jpg', category: 'polish' },
@@ -654,62 +647,79 @@
              { src: 'assets/img/gallery/polish 4.jpg', category: 'polish' },
              { src: 'assets/img/gallery/polish 5.jpg', category: 'polish' },
              { src: 'assets/img/gallery/polish 6.jpg', category: 'polish' },
-             { src: 'assets/img/gallery/spray 2.jpg', category: 'spray' },
-             { src: 'assets/img/gallery/spray 3.jpg', category: 'spray' },
-             { src: 'assets/img/gallery/spray 4.jpg', category: 'spray' },
-             { src: 'assets/img/gallery/spray 5.jpg', category: 'spray' },
-             { src: 'assets/img/gallery/spray 6.jpg', category: 'spray' },
              { src: 'assets/img/gallery/inter 1.jpg', category: 'interlock' },
-             { src: 'assets/img/gallery/inter 2.jpg', category: 'interlock' },
              { src: 'assets/img/gallery/inter 3.jpg', category: 'interlock' },
              { src: 'assets/img/gallery/inter 4.jpg', category: 'interlock' },
-             { src: 'assets/img/gallery/putty 1.jpg', category: 'putty' },
-             { src: 'assets/img/gallery/putty 2.jpg', category: 'putty' },
-             { src: 'assets/img/gallery/putty 3.jpg', category: 'putty' },
-             { src: 'assets/img/gallery/putty 4.jpg', category: 'putty' },
+             { src: 'assets/img/gallery/putty 3.jpeg', category: 'putty' },
+             { src: 'assets/img/gallery/putty 4.jpeg', category: 'putty' },
+             { src: 'assets/img/gallery/ext 7.jpg', category: 'exterior' },
+             { src: 'assets/img/gallery/putty 2.jpeg', category: 'putty' },
+             { src: 'assets/img/gallery/text 5.jpg', category: 'texture' },
+             { src: 'assets/img/gallery/text 7.jpg', category: 'texture' },
+             { src: 'assets/img/gallery/text 9.jpg', category: 'texture' },
+             { src: 'assets/img/gallery/text 3.jpg', category: 'texture' },
+             { src: 'assets/img/gallery/spray1.mp4', category: 'spray', isVideo: true },
+             { src: 'assets/img/gallery/spray2.mp4', category: 'spray', isVideo: true },
+             { src: 'assets/img/gallery/spray3.mp4', category: 'spray', isVideo: true },
+             { src: 'assets/img/gallery/spray4.mp4', category: 'spray', isVideo: true },
+             { src: 'assets/img/gallery/spray5.mp4', category: 'spray', isVideo: true },
+
 
 
              // Add all 50+ image objects here with their respective categories
          ];
          
-         let imagesToShow = 15;
-         let currentCategory = 'all';
- 
-         function displayImages() {
-             const gallery = document.getElementById('gallery');
-             gallery.innerHTML = ''; // Clear the gallery
- 
-             const filteredImages = images.filter(img => currentCategory === 'all' || img.category === currentCategory);
-             const imagesToDisplay = filteredImages.slice(0, imagesToShow);
- 
-             imagesToDisplay.forEach(image => {
-                 const col = document.createElement('div');
-                 col.className = 'col';
-                 col.innerHTML = `
-                     <div class="card" style="padding: 5px;">
-                         <a data-fancybox="gallery" href="${image.src}">
-                             <img src="${image.src}" class="card-img-top" alt="...">
-                         </a>
-                     </div>
-                 `;
-                 gallery.appendChild(col);
-             });
-         }
- 
-         function filterImages(category) {
-             currentCategory = category;
-             imagesToShow = 10; // Reset the number of images to show
-             displayImages();
-         }
- 
-         function showMoreImages() {
-             imagesToShow += 15;
-             displayImages();
-         }
- 
-         // Initial display
-         displayImages();
-     </script>
+         let itemsToShow = 15;
+    let currentCategory = 'all';
+
+    function displayItems() {
+        const gallery = document.getElementById('gallery');
+        gallery.innerHTML = ''; // Clear the gallery
+
+        const filteredItems = items.filter(item => currentCategory === 'all' || item.category === currentCategory);
+        const itemsToDisplay = filteredItems.slice(0, itemsToShow);
+
+        itemsToDisplay.forEach(item => {
+            const col = document.createElement('div');
+            col.className = 'col';
+            if (item.isVideo) {
+                col.innerHTML = `
+                    <div class="card" style="padding: 5px;">
+                        <a data-fancybox="gallery" href="${item.src}">
+                            <video controls class="card-img-top">
+                                <source src="${item.src}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </a>
+                    </div>
+                `;
+            } else {
+                col.innerHTML = `
+                    <div class="card" style="padding: 5px;">
+                        <a data-fancybox="gallery" href="${item.src}">
+                            <img src="${item.src}" class="card-img-top" alt="...">
+                        </a>
+                    </div>
+                `;
+            }
+            gallery.appendChild(col);
+        });
+    }
+
+    function filterItems(category) {
+        currentCategory = category;
+        itemsToShow = 10; // Reset the number of items to show
+        displayItems();
+    }
+
+    function showMoreItems() {
+        itemsToShow += 15;
+        displayItems();
+    }
+
+    // Initial display
+    displayItems();
+</script>
 
      <!-- ------------------------------------------------------------------------------------------------------------------------------------------ -->
   
@@ -731,3 +741,4 @@
       <script src="assets/js/main.js"></script>
    </body>
 </html>
+

@@ -503,7 +503,7 @@
                                         <img src="assets/img/counter/counter-1.png" alt="">
                                     </div>
                                     <div class="counter__content">
-                                        <h3><span class="counter">3620</span></h3>
+                                        <h3><span class="counter"> 1500 </span></h3>
                                         <p>Project Complate</p>
                                     </div>
                                 </div>
@@ -516,7 +516,7 @@
                                         <img src="assets/img/counter/counter-2.png" alt="">
                                     </div>
                                     <div class="counter__content">
-                                        <h3><span class="counter">8756</span></h3>
+                                        <h3><span class="counter">2260</span></h3>
                                         <p>Satisfied Clients</p>
                                     </div>
                                 </div>
@@ -535,7 +535,7 @@
                                         <img src="assets/img/counter/counter-3.png" alt="">
                                     </div>
                                     <div class="counter__content">
-                                        <h3><span class="counter">8796</span></h3>
+                                        <h3><span class="counter">100</span></h3>
                                         <p>Awards Winning</p>
                                     </div>
                                 </div>
@@ -548,7 +548,7 @@
                                         <img src="assets/img/counter/counter-4.png" alt="">
                                     </div>
                                     <div class="counter__content">
-                                        <h3><span class="counter">4563</span></h3>
+                                        <h3><span class="counter">900</span></h3>
                                         <p>Multi Color System</p>
                                     </div>
                                 </div>
@@ -971,7 +971,7 @@
                     <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1">
                         <div class="section__title-wrapper mb-70 text-center">
                             <span class="section__title-pre section__title-pre-3 center">Get In Touch</span>
-                            <h2 class="section__title section__title-2">Don’t Hesited To Conatct With Roxce</h2>
+                            <h2 class="section__title section__title-2">Don’t Hesitate To Contact With Roxce</h2>
                         </div>
                     </div>
                 </div>
@@ -979,57 +979,56 @@
                     <div class="col-xxl-12">
                         <div class="contact__wrapper-4">
                             <div class="contact__form-3 contact__form-4">
-                                <form id="contact-form" action="send_email.php" method="post">
+                                <form id="contact-form" method="post" action="">
                                     <div class="row">
                                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                                             <div class="contact__input-3">
-                                                <input type="text" placeholder="Your Full Name">
+                                                <input type="text" placeholder="Your Full Name" name="name" required>
                                                 <i class="far fa-user"></i>
                                             </div>
                                         </div>
                                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                                             <div class="contact__input-3">
-                                                <input type="email" placeholder="Your Email Address">
+                                                <input type="email" placeholder="Your Email Address" name="email" required>
                                                 <i class="far fa-envelope"></i>
                                             </div>
                                         </div>
                                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                                             <div class="contact__input-3">
-                                                <input type="tel" placeholder="Phone Number">
+                                                <input type="tel" placeholder="Phone Number" name="phone" required>
                                                 <i class="far fa-phone"></i>
                                             </div>
                                         </div>
                                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                                             <div class="contact__input-3">
-                                                <select>
-                                                    <option>Select Services</option>
-                                                    <option>Option 1</option>
-                                                    <option>Option 2</option>
-                                                    <option>Option 3</option>
-                                                    <option>Option 4</option>
+                                                <select name="service" required>
+                                                    <option value="">Select Services</option>
+                                                    <option>Exterior Painting</option>
+                                                    <option>Interior Painting</option>
+                                                    <option>Texture Works</option>
+                                                    <option>Other Works</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12">
                                             <div class="contact__input-3">
-                                                <textarea placeholder="Message"></textarea>
+                                                <textarea placeholder="Message" name="message" required></textarea>
                                             </div>
                                         </div>
                                         <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12">
                                             <div class="contact__btn-3 contact__btn-4">
-                                                <button type="submit" class="r-btn r-btn-yellow w-100">send message <i
-                                                        class="far fa-arrow-right"></i></button>
+                                                <button type="submit" class="r-btn r-btn-yellow w-100">send message <i class="far fa-arrow-right"></i></button>
                                             </div>
                                         </div>
                                     </div>
                                 </form>
-                                <div class="ajax-response"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        
         <!-- contact end -->
     </main>
 
@@ -1229,6 +1228,25 @@
     </footer>
     <!-- footer area end -->
 
+ <!-- javascript -->
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $("#contact-form").submit((e) => {
+        e.preventDefault();
+        $.ajax({
+            url: "https://script.google.com/macros/s/AKfycbwG0TdCaUZe-2P2fMzcftqPZdRict2SPxijAqnORMArdf2Ex_kNZ8dGdIjWk7-MlqPL/exec",
+            data: $("#contact-form").serialize(),
+            method: "post",
+            success: function (response) {
+                alert("Form submitted successfully");
+                window.location.reload();
+            },
+            error: function (err) {
+                alert("Something went wrong");
+            }
+        });
+    });
+</script>
     <!-- JS here -->
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
